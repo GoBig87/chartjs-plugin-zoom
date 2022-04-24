@@ -25,6 +25,7 @@ function createEnabler(chart, state) {
 }
 
 function pinchAxes(p0, p1) {
+
   // fingers position difference
   const pinchX = Math.abs(p0.clientX - p1.clientX);
   const pinchY = Math.abs(p0.clientY - p1.clientY);
@@ -32,13 +33,13 @@ function pinchAxes(p0, p1) {
   // diagonal fingers will change both (xy) axes
   const p = pinchX / pinchY;
   let x, y;
-  if (p > 0.3 && p < 1.7) {
-    x = y = true;
-  } else if (pinchX > pinchY) {
-    x = true;
-  } else {
-    y = true;
-  }
+  //if (p > 0.3 && p < 1.7) {
+  x = y = true;
+  // } else if (pinchX > pinchY) {
+  //   x = true;
+  // } else {
+  //   y = true;
+  // }
   return {x, y};
 }
 
